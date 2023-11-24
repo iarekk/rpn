@@ -10,8 +10,9 @@ defmodule Calculator do
         ) ::
           Integer.t()
 
-  def eval_rpn_internal(["+" | rest_tokens], [a, b | rest_stack]) do
-    eval_rpn_internal(rest_tokens, [a + b | rest_stack])
+  def eval_rpn_internal([op | rest_tokens], [a, b | rest_stack])
+      when op in ["+", "-", "*", "/"] do
+    eval_rpn_internal(rest_tokens, [apply_op(op, a, b) | rest_stack])
   end
 
   def eval_rpn_internal([token | rest_tokens], stack) do
@@ -22,4 +23,9 @@ defmodule Calculator do
   def eval_rpn_internal([], [current_result]) do
     current_result
   end
+
+  def apply_op("+", a, b), do: a + b
+  def apply_op("-", a, b), do: a - b
+  def apply_op("*", a, b), do: a * b
+  def apply_op("/", a, b), do: a / b
 end
