@@ -23,6 +23,14 @@ defmodule CalculatorTest do
   end
 
   test "complext expression" do
+    # ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
+    # = ((10 * (6 / (12 * -11))) + 17) + 5
+    # = ((10 * (6 / -132)) + 17) + 5
+    # = ((10 * 0) + 17) + 5
+    # = (0 + 17) + 5
+    # = 17 + 5
+    # = 22
+
     assert Calculator.eval_rpn([
              "10",
              "6",
