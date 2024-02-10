@@ -1,21 +1,19 @@
 # Rpn
 
-**TODO: Add description**
+A Reverse Polish Notation calculator. See more here: <https://en.wikipedia.org/wiki/Reverse_Polish_notation>.
 
-## Installation
+The program is written as a solution to the LeetCode problem <https://leetcode.com/problems/evaluate-reverse-polish-notation/>.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `rpn` to your list of dependencies in `mix.exs`:
+The calculator supports integer operands, can do addition, subtraction, division and multiplication, and expects a valid input.
 
-```elixir
-def deps do
-  [
-    {:rpn, "~> 0.1.0"}
-  ]
-end
+Example:
+
+```
+Input: tokens = ["2","1","+","3","*"]
+Output: 9
+Explanation: ((2 + 1) * 3) = 9
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/rpn>.
+
+
 
